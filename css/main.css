@@ -31,6 +31,7 @@ body {
 	margin: 0 !important;
 	width: 500px;
 	height: 500px;
+	z-index: 1;
 }
 
 .square {
@@ -96,6 +97,7 @@ body {
 	height: 500px;
 	vertical-align: top;
 	filter: grayscale(100%);
+	z-index: 0;
 }
 
 .caption {
