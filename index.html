@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 		<link rel="stylesheet" type="text/css" href="css/buttons.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
@@ -10,34 +11,25 @@
 		<div class="outer">
 			<div class="middle">
 				<div id="squares" class="inner">
-					<div id="square1" class="square square-small">
+					<div id="square1" data-id="1" class="square square-small">
 					</div>
-					<div id="square2" class="square square-large">
+					<div id="square2" data-id="2" class="square square-large">
 					</div>
-					<div id="square3" class="square square-large">
+					<div id="square3" data-id="3" class="square square-large">
 					</div>
-					<div id="square4" class="square square-small">
+					<div id="square4" data-id="4" class="square square-small">
 					</div>
 				</div>
 			</div>
 		</div>
 		<div id="content1" class="content">
 		</div>
-		<script>
-			$("#square1").click(function () {
-				var content = $("#content1");
-				console.log($(this).position());
-				content.offset($(this).offset());
-				$(this).hide();
-				content.animate({
-					left: "10%",
-					top: "10%",
-					width: "80%",
-					height: "80%"
-				}, 500, function () {
-
-				});
-			});
-		</script>
+		<div id="content2" class="content">
+		</div>
+		<div id="content3" class="content">
+		</div>
+		<div id="content4" class="content">
+		</div>
+		<script src="js/main.js"></script>
 	</body>
 </html>
