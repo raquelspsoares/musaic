@@ -23,6 +23,11 @@ $( document ).ready(function() {
 			$(window).click(function() {
 				closeContent(content, square);
 			});
+			$(document).keyup(function(e) {
+				 if (e.keyCode == 27) {
+					closeContent(content, square);
+				}
+			});
 		});
 	});
 });
@@ -33,6 +38,7 @@ var closeContent = function(content, square) {
 	var top = square.offset().top;
 	square.hide();
 	$(window).off("click");
+	$(document).off("keyup");
 	content.off("click");
 	content.animate({
 			backgroundColor: "rgba(0, 0, 0, 0.25)",
