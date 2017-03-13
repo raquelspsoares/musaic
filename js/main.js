@@ -28,6 +28,9 @@ $( document ).ready(function() {
 					closeContent(content, square);
 				}
 			});
+			content.find(".close").click(function() {
+				closeContent(content, square);
+			});
 		});
 	});
 });
@@ -39,6 +42,7 @@ var closeContent = function(content, square) {
 	square.hide();
 	$(window).off("click");
 	$(document).off("keyup");
+	content.find(".close").off("click");
 	content.off("click");
 	content.animate({
 			backgroundColor: "rgba(0, 0, 0, 0.25)",
