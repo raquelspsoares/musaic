@@ -90,6 +90,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.25);
 	border: solid 13px white;
 	display: none;
+	z-index: 3;
 }
 
 .name {
