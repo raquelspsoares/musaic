@@ -1,13 +1,18 @@
 $( document ).ready(function() {
 	$(".square").click(function () {
-		var id = $(this).data("id");
+		var square = $(this);
+		var id = square.data("id");
 		var content = $("#content" + id);
-		console.log($(this).position());
-		content.offset($(this).offset());
-		content.width($(this).outerWidth());
-		content.height($(this).outerHeight());
 		content.show();
-		$(this).hide();
+		content.offset(square.offset());
+		content.width(square.outerWidth());
+		content.height(square.outerHeight());
+		square.hide();
+
+		content.click(function(event){
+			event.stopPropagation();
+		});
+
 		content.animate({
 			backgroundColor: "white",
 			left: "10%",
@@ -15,7 +20,28 @@ $( document ).ready(function() {
 			width: "80%",
 			height: "80%"
 		}, 400, function () {
-
+			$(window).click(function() {
+				closeContent(content, square);
+			});
 		});
 	});
 });
+
+var closeContent = function(content, square) {
+	square.show();
+	var left = square.offset().left;
+	var top = square.offset().top;
+	square.hide();
+	$(window).off("click");
+	content.off("click");
+	content.animate({
+			backgroundColor: "rgba(0, 0, 0, 0.25)",
+			left: left,
+			top: top,
+			width: square.outerWidth(),
+			height: square.outerHeight()
+		}, 400, function () {
+			content.hide();
+			square.show();
+		});
+}
