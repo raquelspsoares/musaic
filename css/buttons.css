@@ -1,0 +1,149 @@
+/* Sizes */
+.button--size-s {
+	font-size: 14px;
+}
+.button--size-m {
+	font-size: 16px;
+}
+.button--size-l {
+	font-size: 18px;
+}
+
+/* Typography and Roundedness */
+.button--text-upper {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+.button--text-thin {
+	font-weight: 300;
+}
+.button--text-medium {
+	font-weight: 500;
+}
+.button--text-thick {
+	font-weight: 600;
+}
+.button--round-s {
+	border-radius: 5px;
+}
+.button--round-m {
+	border-radius: 30px;
+}
+.button--round-l {
+	border-radius: 40px;
+}
+
+/* Borders */
+.button--border-thin {
+	border: 1px solid;
+}
+.button--border-medium {
+	border: 2px solid;
+}
+.button--border-thick {
+	border: 3px solid;
+}
+/* Social Buttons 
+----------------------------*/
+.social-button {
+	float: left;
+	min-width: 30px;
+	max-width: 30px;
+	height:30px;
+	display: block;
+	border: none;
+	background: transparent;
+	padding:0;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	cursor: pointer;
+}
+.social-button {
+	-webkit-transition: border-color 0.4s, color 0.4s;
+	transition: border-color 0.4s, color 0.4s;
+}
+
+.social-button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0;
+	border-radius: 20px;
+	-webkit-transform: scale3d(0.8, 1, 1);
+	transform: scale3d(0.8, 1, 1);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.social-button.button--round-s::before {
+	border-radius: 30px;
+}
+.social-button.button--inverted::before {
+	background: #fff;
+}
+.social-button,
+.social-button::before {
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.social-button.button--inverted:hover {
+	border-color: #000000;
+}
+.social-button:hover::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.transparent .social-button.facebook::before {
+	background:#3b5998;
+	border:none;
+}
+.transparent .social-button.twitter::before {
+	background:#55acee;
+	border:none;
+}
+.transparent .social-button.linkedin::before {
+	background:#0077b5;
+	border:none;
+}
+.transparent .social-button.youtube::before {
+	background:#e52d27;
+	border:none;
+}
+.color .social-button.facebook::before {
+	background:transparent;
+	border:2px solid #3b5998;
+}
+.color .social-button.twitter::before {
+	background:transparent;
+	border:2px solid #55acee;
+}
+.color .social-button.linkedin::before {
+	background:transparent;
+	border:2px solid #0077b5;
+}
+.color .social-button.youtube::before {
+	background:transparent;
+	border:2px solid #e52d27;
+}
+
+.social-button.facebook.button--inverted:hover {
+	color: #37474F;
+}
+.social-button.twitter.button--inverted:hover {
+	color: #55acee;
+}
+.social-button.linkedin.button--inverted:hover {
+	color: #0077b5;
+}
+.social-button.youtube.button--inverted:hover {
+	color: #e52d27;
+}
