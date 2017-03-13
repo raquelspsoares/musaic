@@ -4,92 +4,40 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 		<link rel="stylesheet" type="text/css" href="css/buttons.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
-	<script>
-		$(document).ready(function(){
-			$('.image-musaic').click(function(){
-				if (!$(this).hasClass('play')) {
-					$(this).attr('src', "img/"+$(this).data("src"));
-					$(this).addClass('play')
-				} else  {
-					$(this).attr('src', 'img/teste.png');
-					$(this).removeClass('play')
-				}
-			}).hover(function(){
-				if (!$(this).hasClass('play')) {
-					$(this).attr('src', "img/"+$(this).data("src"));
-					$(this).addClass('play')
-				} else  {
-					$(this).attr('src', 'img/teste.png');
-					$(this).removeClass('play')
-				}
-			});
-		});
-	</script>
 	<body class="homepage">
-		<div class="container">
-			<div class="row" style="height:50%;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;">
-				<div class="col-md-12 col-xs-12" style="">
-					<div class="col-md-12 col-xs-12" style="height:50%;">
-						<div class="col-md-5 col-xs-6" style="height:100%;padding: 10px;">
-							<a href="about.html">
-								<span class="helper">
-									<span style="display: inline-block;height: 100%;width: 1px;"></span>
-									<img src="img/teste.png" data-src="teste2.png" class="image-70-1 image-musaic img-responsive"/>
-								</span>
-							</a>
-						</div>
-						<div class="col-md-5 col-xs-6" style="height:100%;padding: 10px;">
-							<a href="contacts.html">
-								<img src="img/teste.png" data-src="teste2.png" class="image-musaic img-responsive image-90-1"/>
-								<span class="helper_2">
-									<span style="display: inline-block;height: 100%;width: 1px;"></span>
-									<img src="img/mu.png" class="logo_text_mu img-responsive"/>
-								</span>
-							 </a>
-						</div>
-					</div>		
-					<div class="col-md-12 col-xs-12" style="height:50%;">
-						<div class="col-md-5 col-xs-6" style="height:100%;padding: 10px;">
-							<a href="about.html">
-								<img src="img/teste.png" data-src="teste2.png" class="image-musaic pull-right img-responsive image-90-2"/>
-							</a>
-						</div>
-						<div class="col-md-5 col-xs-6" style="height:100%;padding: 10px;">
-							<a href="about.html">
-								<img src="img/teste.png" data-src="teste2.png" class="image-musaic img-responsive image-70-2"/>
-								<span class="helper_2">
-									<span style="display: inline-block;height: 100%;width: 1px;"></span>
-									<img src="img/saic.png" class="logo_text_saic"/>
-								</span>
-							</a>
-						</div>
+		<div class="outer">
+			<div class="middle">
+				<div id="squares" class="inner">
+					<div id="square1" class="square square-small">
+					</div>
+					<div id="square2" class="square square-large">
+					</div>
+					<div id="square3" class="square square-large">
+					</div>
+					<div id="square4" class="square square-small">
 					</div>
 				</div>
 			</div>
-			<div class="row social_media" style="position:absolute;left:0;right:0;bottom:30px;margin:0 auto;">
-				
-			</div>
-			<div class="row social_media" style="position:absolute;left:0;right:0;bottom:30px;margin:0 auto;">
-				<div class="col-md-2 col-md-offset-5">
-					<ul class="social-media icons transparent">
-						<li>
-							<a href="#">
-								<button class="social-button button--facebook button--round-m button--border-thick facebook">
-									<img src="img/svg/KMX_footer_facebook.svg">
-								</button>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<button class="social-button button--facebook button--round-m button--border-thick twitter">
-									<img src="img/svg/KMX_footer_twitter.svg">
-								</button>	
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
 		</div>
+		<div id="content1" class="content">
+		</div>
+		<script>
+			$("#square1").click(function () {
+				var content = $("#content1");
+				console.log($(this).position());
+				content.offset($(this).offset());
+				$(this).hide();
+				content.animate({
+					left: "10%",
+					top: "10%",
+					width: "80%",
+					height: "80%"
+				}, 500, function () {
+
+				});
+			});
+		</script>
 	</body>
 </html>

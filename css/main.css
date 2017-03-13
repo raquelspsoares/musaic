@@ -1,143 +1,89 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800);
+.homepage {
+	background-image: url('../img/3.png');
+	background-size: cover;
+}
 
 body {
-	font-family: 'Raleway', Arial, sans-serif !important;
-	overflow-x: hidden;
+	text-align: middle;
 }
-.homepage{
-	background-image:url('../img/3.png');
-	background-size:cover;
-}
-h1{
-	font-size:15vmin !important;
-	margin:0 !important;
-}
-.logo_text_mu,
-.logo_text_saic{
-    display: inline-block !important;
-}
-.logo_text_saic{
-	vertical-align:top;
-	width:auto;
-	height:75px;
-}
-.logo_text_mu{
-    vertical-align: baseline;
-	width:auto;
-	height:75px !important;
-	margin-left:30px;
-}
-.image-70-1{
-	height: 80% !important;
-	/*margin: auto !important;
-	display: block ;
-	position: absolute !important;
-	bottom: 10px !important;
-	right:10px !important;*/
-	float: none !important;
-    vertical-align: baseline;
-    display: inline-block !important;
-}
-.image-70-2{
-	height:80% !important;
-	float:left;
-	/*margin: auto !important;
-	display: block ;
-	position: absolute !important;
-	top: 10px !important;
-	left:10px !important;*/
-}
-.image-90-1{
-	height:100% !important;
-	float:left;
-	/*margin: auto !important;
-	display: block ;
-	position: absolute !important;
-	bottom: 10px !important;
-	left: 10px !important;*/
-}
-.image-90-2{
-	height:100% !important;
-	/*margin: auto !important;
-	display: block ;
-	position: absolute !important;
-	top: 10px !important;
-	right: 10px !important;*/
-}
-.helper {
-    display: inline-block;
+
+.outer {
+    display: table;
+    position: absolute;
     height: 100%;
-    vertical-align: bottom;
-    float: right;
+    width: 100%;
 }
-.helper_2 {
-    display: inline-block;
-    height: 100%;
-    vertical-align: bottom;
-    float: left;
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
 }
-.social-media{
-	text-decoration:none;
-	text-align:center;
-	margin:0;
-	padding:0;
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: /*whatever width you want*/;
 }
-.social-media li{
-	display:inline-block;
-	width:50px;
-}
-.social-media li a:hover{
-}
-.image-musaic:hover {
-	cursor:pointer;
-	-webkit-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	-ms-transform: scale(1.2);
-	-o-transform: scale(1.2);
-	transform: scale(1.2);
-}
-.image-musaic {
-	-webkit-transition: all 0.35s ease-in-out;
-	-moz-transition: all 0.35s ease-in-out;
-	transition: all 0.35s ease-in-out;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
+
+#squares {
+	position: relative;
+	margin: auto;
+	width: 500px;
+	height: 500px;
 }
 
 .square {
-    float:left;
-    position: relative;
-    width: 70%;
-    padding-bottom : 70%; /* = width for a 1:1 aspect ratio */
-    margin:1.66%;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
-}
-.square2 {
-    float:left;
-    position: relative;
-    width: 90%;
-    padding-bottom : 90%; /* = width for a 1:1 aspect ratio */
-    margin:1.66%;
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
-}
-.img_1-1{background-image:url('../img/our-history.png');}
-.img_1-2{background-image:url('../img/our-history.png');}
-.img_1-3{background-image:url('../img/our-history.png');}
-.img_1-4{background-image:url('../img/our-history.png');}
-/*------------------- ABOUT ------------------*/
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
+	background-color: rgba(0, 0, 0, 0.25);
+	margin: auto;
+	border: solid 13px white;
+	transition: all .2s ease-in-out;
 }
 
-.navbar .navbar-collapse {
-  text-align: center;
+.square:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.square-small {
+	width: 25%;
+	height: 25%;
+}
+
+.square-large {
+	width: 46.66666666%;
+	height: 46.66666666%;
+}
+
+#square1 {
+	position: absolute;
+	top: 21.66666666%;
+	left: 21.66666666%;
+}
+
+#square2 {
+	position: absolute;
+	top: 0;
+	left: 53.33333333%;
+}
+
+#square3 {
+	position: absolute;
+	top: 53.33333333%;
+	left: 0;
+}
+
+#square4 {
+	position: absolute;
+	top: 53.33333333%;
+	left: 53.33333333%;
+}
+
+.content {
+	position: absolute;
+	left: 10%;
+	top: 10%;
+	width: 0;
+	height: 0;
+	background-color: white;
 }
